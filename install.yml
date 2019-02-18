@@ -1,0 +1,11 @@
+- hosts: localhost
+  vars:
+    - x:
+      - httpd
+      - vsftpd
+      - "docker-ce"
+  tasks:
+    - package:
+        name: "{{x}}"
+        state: present
+      with_items: "{{x}}"

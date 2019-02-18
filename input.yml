@@ -1,0 +1,8 @@
+- hosts: localhost
+  vars_prompt:
+       name: x
+       prompt: "Enter your name: "
+       private: false
+  tasks:
+       - debug:
+            msg: "Hey {{x}}!"

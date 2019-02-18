@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+    - docker_container:
+          image: centos
+          interactive: true
+          name: myFirstContainer

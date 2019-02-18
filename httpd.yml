@@ -1,0 +1,19 @@
+- hosts: localhost
+  tasks:
+     - include_vars: "/root/myvars.yml"
+     - package:
+          name: "{{x}}"
+          state: present
+     - service:
+          name: "{{x}}"
+          state: started
+          enabled: yes
+     - file:
+          path: "/root/ravi"
+          state: directory
+     - copy:
+          dest: "/root/ravi/cool.html"
+          content: "Hey Bud! Wassup!"
+     - copy:
+          dest: "/var/www/html/"
+          src: "/root/ravi/cool.html"

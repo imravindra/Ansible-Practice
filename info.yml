@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+    - stat:
+         path: "/root/Desktop/coolx"
+      register: x
+    - debug:
+         msg: "File exists"
+      when: x.state.exists!=true
+    - debug:
+         msg: "File Doesn't Exists"
